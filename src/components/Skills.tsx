@@ -3,8 +3,8 @@ import { skills } from "../data/skils"
 function Skills(){
     return (
         <section id="skills">
-            {skills.map((skill,index) =>(
-                <div key={index}>
+            {skills.map((skill) =>(
+                <div key={skill.id}>
                     <h3>{skill.category}</h3>
                     <ul>
                         {skill.technologies.map((tech)=>(
@@ -15,6 +15,6 @@ function Skills(){
             ))}
         </section>
     )
-}
+}   
 
 export default Skills

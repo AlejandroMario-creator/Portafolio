@@ -10,8 +10,8 @@ function Projects() {
                     <div>
                         <strong>Tecnologias:</strong>
                         <ul>
-                            {project.technologies.map((tech, techIndex) => (
-                                <li key={techIndex}>{tech}</li>
+                            {project.technologies.map((tech) => (
+                                <li key={tech}>{tech}</li>
                             ))}
                         </ul>
 

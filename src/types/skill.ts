@@ -3,4 +3,3 @@ export default interface Skill {
     category: string
     technologies: string[]
 }
-    
