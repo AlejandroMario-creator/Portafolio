@@ -1,12 +1,12 @@
-import { experiences } from "../data/experience";
+import { experiences } from "../data/experiences";
 
 function Experience() {
     return (
         <section id="experience">
             <h2>Experiencia</h2>
             <div >
-                {experiences.map((exp, index) => (
-                    <div key={index}>
+                {experiences.map((exp) => (
+                    <div key={exp.id}>
                         <h3>{exp.role}</h3>
                         <h4>{exp.company}</h4>
                         <p>{exp.startDate} - {exp.endDate}</p>
