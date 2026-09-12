@@ -16,7 +16,8 @@ function Projects() {
                         </ul>
 
                     </div>
-                    <a href={project.github} target="_blank" rel="noreferrer">GitHub</a>
+                    <a href={project.github} target="_blank" rel="noreferrer">GitHub</a><br/>
+                    
                     <a href={project.demo} target="_blank" rel="noreferrer">Demo</a>
                 </div>
             ))}

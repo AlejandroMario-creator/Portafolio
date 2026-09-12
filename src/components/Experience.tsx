@@ -8,6 +8,7 @@ function Experience() {
                 {experiences.map((exp) => (
                     <div key={exp.id}>
                         <h3>{exp.role}</h3>
+                        <h4>{exp.ruc}</h4>
                         <h4>{exp.company}</h4>
                         <p>{exp.startDate} - {exp.endDate}</p>
                         <p>{exp.description}</p>

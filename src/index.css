@@ -1,3 +1,31 @@
-*{
-    
+/* Selecciona la etiqueta <nav> */
+nav {
+  background:linear-gradient(45deg, #6f2cd2e1, #43413f);
+  padding: 1rem;
+  border-radius: 130px;
+}
+
+/* Selecciona la lista <ul> dentro de <nav> */
+nav ul {
+  list-style: none; /* Elimina los puntos/viñetas */
+  margin: 0;
+  padding: 0;
+  display: flex; /* Alinea los elementos en fila horizontal */
+  justify-content: space-evenly; /* Centra el menú (cámbialo a flex-end si lo quieres a la derecha) */
+  gap: 20px; /* Espaciado moderno entre cada enlace */
+}
+
+/* Selecciona los enlaces <a> dentro de los elementos de la lista */
+nav ul li a {
+  color: #ffffff;
+  text-decoration: none; /* Elimina el subrayado por defecto */
+  font-weight: 500;
+  padding: 8px 16px;
+  transition: color 0.3s ease;
+}
+
+/* Efecto visual cuando pasas el cursor por encima */
+nav ul li a:hover {
+  cursor: pointer;
+  color: #00adb5; /* Cambia al color de acento de tu portafolio */
 }
