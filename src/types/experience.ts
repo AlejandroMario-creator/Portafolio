@@ -1,7 +1,7 @@
 export default interface Experience{
     id: number,
     company: string,
-    ruc: number,
+    ruc: string,
     role: string,
     startDate: string,
     endDate: string,

@@ -1,31 +1,106 @@
-/* Selecciona la etiqueta <nav> */
+/* ==========================================================================
+   Contenedor Principal: Etiqueta <nav> (Estilo Glassmorphism unificado)
+   ========================================================================== */
 nav {
-  background:linear-gradient(45deg, #6f2cd2e1, #43413f);
-  padding: 1rem;
-  border-radius: 130px;
+  /* Ubicación y tamaño adaptado de .menu */
+  width: calc(100% - 20px);
+  max-width: 520px;
+  margin: 0 auto; /* Centra el menú horizontalmente en la pantalla */
+  position: relative; /* Necesario para el pseudoelemento ::after */
+  z-index: 50;
+  
+  /* Fondo y Efecto de Desfoque (Glassmorphism) */
+  backdrop-filter: blur(12px) saturate(180%) contrast(200%);
+  -webkit-backdrop-filter: blur(12px) saturate(180%) contrast(200%);
+  background: linear-gradient(45deg, rgba(111, 44, 210, 0.85), rgba(67, 65, 63, 0.85)); /* Degradado original con transparencia */
+  border: 1px solid rgba(255, 255, 255, 0.2); /* Borde sutil estilo glass */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+  
+  /* Espaciado y bordes redondeados */
+  padding: 8px 16px;
+  border-radius: 99rem;
 }
 
-/* Selecciona la lista <ul> dentro de <nav> */
+/* Efecto de iluminación interna (Borde 3D sutil) */
+nav::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  box-shadow:
+    inset 2px 2px 5px -2px rgba(255, 255, 255, 0.4),
+    inset -2px -2px 5px 2px rgba(255, 255, 255, 0.2),
+    inset 0 -2px 0 rgba(255, 255, 255, 0.2);
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* ==========================================================================
+   Lista <ul> dentro de <nav> (Estructura Flexbox)
+   ========================================================================== */
 nav ul {
-  list-style: none; /* Elimina los puntos/viñetas */
+  list-style: none; /* Elimina las viñetas */
   margin: 0;
   padding: 0;
-  display: flex; /* Alinea los elementos en fila horizontal */
-  justify-content: space-evenly; /* Centra el menú (cámbialo a flex-end si lo quieres a la derecha) */
-  gap: 20px; /* Espaciado moderno entre cada enlace */
+  display: flex; /* Alineación horizontal */
+  justify-content: space-evenly; /* Distribución uniforme */
+  align-items: center;
+  gap: 8px; /* Espaciado moderno entre elementos */
 }
 
-/* Selecciona los enlaces <a> dentro de los elementos de la lista */
+nav ul li {
+  flex: 1 1 0;
+  min-width: 0;
+  display: flex;
+}
+
+/* ==========================================================================
+   Enlaces <a> (Botones interactivos)
+   ========================================================================== */
 nav ul li a {
-  color: #ffffff;
-  text-decoration: none; /* Elimina el subrayado por defecto */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  color: rgba(255, 255, 255, 0.9);
+  text-decoration: none; /* Elimina el subrayado */
   font-weight: 500;
-  padding: 8px 16px;
-  transition: color 0.3s ease;
+  font-family: Times, sans-serif;
+  padding: 10px 6px;
+  border-radius: 999rem;
+  -webkit-tap-highlight-color: transparent;
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; /* 👈 Letra moderna y limpia */
+  font-weight: 50;
+  
+  /* Transición fluida utilizando variables o fallback estándar */
+  transition:
+    background 0.18s cubic-bezier(0.25, 1, 0.5, 1),
+    color 0.18s cubic-bezier(0.25, 1, 0.5, 1),
+    transform 0.18s cubic-bezier(0.25, 1, 0.5, 1),
+    box-shadow 0.3s ease-in-out;
 }
 
-/* Efecto visual cuando pasas el cursor por encima */
+/* Efecto Hover (Cursor encima) */
 nav ul li a:hover {
   cursor: pointer;
-  color: #00adb5; /* Cambia al color de acento de tu portafolio */
+  background-color: rgba(255, 255, 255, 0.2); /* Fondo semi-transparente */
+  box-shadow:
+    inset 2px 2px 5px -2px rgba(255, 255, 255, 0.4),
+    inset -2px -1px 5px 0 rgba(255, 255, 255, 0.4);
+  transform: rotate(2deg) scale(1.04); /* Corregido: añadido 'deg' y un leve escalado */
+  color: #c0b4d2; /* Tu color de acento personalizado */
+}
+
+/* Estado Activo (Pestaña de la página actual) */
+nav ul li a.active {
+  background: rgba(237, 237, 237, 0.6);
+  color: rgba(67, 30, 203, 0.942);
+  transform: scale(0.96);
+}
+
+/* Efecto de clic físico (Momento exacto de presionar) */
+nav ul li a:active {
+  background-color: rgb(181, 98, 232);
+  color: rgba(255, 255, 255, 0.95);
+  transform: scale(0.95);
 }

@@ -8,7 +8,7 @@ function Skills(){
                     <h3>{skill.category}</h3>
                     <ul>
                         {skill.technologies.map((tech)=>(
-                            <li key={skill.id}>{tech}</li>
+                            <li key={tech}>{tech}</li>
                         ))}
                     </ul>
                 </div>
