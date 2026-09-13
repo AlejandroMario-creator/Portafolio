@@ -1,51 +1,141 @@
 /* ==========================================================================
-   Contenedor Principal: Etiqueta <nav> (Estilo Glassmorphism unificado)
+   Configuración Base de la Página (Negro Absoluto)
    ========================================================================== */
-nav {
-  /* Ubicación y tamaño adaptado de .menu */
-  width: calc(100% - 20px);
-  max-width: 520px;
-  margin: 0 auto; /* Centra el menú horizontalmente en la pantalla */
-  position: relative; /* Necesario para el pseudoelemento ::after */
-  z-index: 50;
-  
-  /* Fondo y Efecto de Desfoque (Glassmorphism) */
-  backdrop-filter: blur(12px) saturate(180%) contrast(200%);
-  -webkit-backdrop-filter: blur(12px) saturate(180%) contrast(200%);
-  background: linear-gradient(45deg, rgba(111, 44, 210, 0.85), rgba(67, 65, 63, 0.85)); /* Degradado original con transparencia */
-  border: 1px solid rgba(255, 255, 255, 0.2); /* Borde sutil estilo glass */
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
-  
-  /* Espaciado y bordes redondeados */
-  padding: 8px 16px;
-  border-radius: 99rem;
+body {
+  margin: 0;
+  min-height: 100vh;
+  background-color: #000000;
+  color: #ffffff;
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  position: relative;
 }
 
-/* Efecto de iluminación interna (Borde 3D sutil) */
+/* ==========================================================================
+   Contenedor de la Aurora (Fondo Animado)
+   ========================================================================== */
+.aurora-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  overflow: hidden;
+  background: radial-gradient(circle at 50% 50%, #090514, #000000);
+}
+
+/* ==========================================================================
+   Las "Nubes" de Luz (Blobs) - Paleta: Morado, Blanco y Negro
+   ========================================================================== */
+.blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(140px);
+  mix-blend-mode: screen;
+}
+
+.blob-1 {
+  top: -10%;
+  left: -5%;
+  width: 65vw;
+  height: 65vw;
+  background-color: #6f2cd2;
+  opacity: 0.4;
+  animation: orbitar-1 25s infinite alternate ease-in-out;
+}
+
+.blob-2 {
+  bottom: -15%;
+  right: -5%;
+  width: 45vw;
+  height: 45vw;
+  background-color: #ffffff;
+  opacity: 0.12;
+  animation: orbitar-2 28s infinite alternate ease-in-out;
+}
+
+.blob-3 {
+  top: 35%;
+  left: 35%;
+  width: 50vw;
+  height: 50vw;
+  background-color: #3d147a;
+  opacity: 0.35;
+  animation: orbitar-3 22s infinite alternate ease-in-out;
+}
+
+/* ==========================================================================
+   Animaciones de Movimiento Orgánico
+   ========================================================================== */
+@keyframes orbitar-1 {
+  0% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(15vw, 10vh) scale(1.15); }
+  100% { transform: translate(-8vw, 20vh) scale(0.9); }
+}
+
+@keyframes orbitar-2 {
+  0% { transform: translate(0, 0) scale(1.1); }
+  50% { transform: translate(-20vw, -15vh) scale(0.85); }
+  100% { transform: translate(8vw, -8vh) scale(1.2); }
+}
+
+@keyframes orbitar-3 {
+  0% { transform: translate(0, 0) scale(0.95); }
+  50% { transform: translate(-10vw, 12vh) scale(1.1); }
+  100% { transform: translate(12vw, -12vh) scale(1); }
+}
+
+/* ==========================================================================
+   Contenedor Principal: Etiqueta <nav> (Efecto Fantasma + Flotante Fijo)
+   ========================================================================= */
+nav {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100% - 40px);
+  max-width: 650px;
+  z-index: 100;
+  padding: 12px 24px;
+  border-radius: 99rem;
+  backdrop-filter: blur(16px) saturate(140%);
+  -webkit-backdrop-filter: blur(16px) saturate(140%);
+  background: linear-gradient(45deg, rgba(82, 10, 190, 0.05), rgba(255, 255, 255, 0.01));
+  border: 1px solid rgba(147, 51, 234, 0.25);
+  box-shadow: 0 8px 32px 0 rgba(111, 44, 210, 0.1);
+  transition: background 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease, transform 0.22s ease;
+}
+
+nav:hover {
+  background: linear-gradient(45deg, rgba(82, 10, 190, 0.45), rgba(20, 18, 25, 0.7));
+  border-color: rgba(147, 51, 234, 0.55);
+  box-shadow: 0 12px 30px rgba(111, 44, 210, 0.3);
+  transform: translateX(-50%) scale(1.01);
+}
+
 nav::after {
   content: "";
   position: absolute;
   inset: 0;
   border-radius: inherit;
   box-shadow:
-    inset 2px 2px 5px -2px rgba(255, 255, 255, 0.4),
-    inset -2px -2px 5px 2px rgba(255, 255, 255, 0.2),
-    inset 0 -2px 0 rgba(255, 255, 255, 0.2);
+    inset 2px 2px 5px -2px rgba(255, 255, 255, 0.3),
+    inset -2px -2px 5px 2px rgba(255, 255, 255, 0.1);
   pointer-events: none;
   z-index: -1;
 }
 
 /* ==========================================================================
-   Lista <ul> dentro de <nav> (Estructura Flexbox)
-   ========================================================================== */
+   Lista <ul> dentro de <nav> (Alineación y Espacios)
+   ========================================================================= */
 nav ul {
-  list-style: none; /* Elimina las viñetas */
+  list-style: none;
   margin: 0;
   padding: 0;
-  display: flex; /* Alineación horizontal */
-  justify-content: space-evenly; /* Distribución uniforme */
+  display: flex;
+  justify-content: space-evenly;
   align-items: center;
-  gap: 8px; /* Espaciado moderno entre elementos */
+  gap: 12px;
 }
 
 nav ul li {
@@ -55,52 +145,47 @@ nav ul li {
 }
 
 /* ==========================================================================
-   Enlaces <a> (Botones interactivos)
-   ========================================================================== */
+   Enlaces <a> (Botones de navegación de texto flotante)
+   ========================================================================= */
 nav ul li a {
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100%;
-  color: rgba(255, 255, 255, 0.9);
-  text-decoration: none; /* Elimina el subrayado */
-  font-weight: 500;
-  font-family: Times, sans-serif;
-  padding: 10px 6px;
+  color: rgba(255, 255, 255, 0.85);
+  text-decoration: none;
+  padding: 10px 8px;
   border-radius: 999rem;
   -webkit-tap-highlight-color: transparent;
-  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; /* 👈 Letra moderna y limpia */
-  font-weight: 50;
-  
-  /* Transición fluida utilizando variables o fallback estándar */
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  font-weight: 600;
+  font-size: 1.05rem;
   transition:
-    background 0.18s cubic-bezier(0.25, 1, 0.5, 1),
-    color 0.18s cubic-bezier(0.25, 1, 0.5, 1),
-    transform 0.18s cubic-bezier(0.25, 1, 0.5, 1),
+    background 0.22s cubic-bezier(0.25, 1, 0.5, 1),
+    color 0.22s cubic-bezier(0.25, 1, 0.5, 1),
+    transform 0.22s cubic-bezier(0.25, 1, 0.5, 1),
     box-shadow 0.3s ease-in-out;
 }
 
-/* Efecto Hover (Cursor encima) */
 nav ul li a:hover {
   cursor: pointer;
-  background-color: rgba(255, 255, 255, 0.2); /* Fondo semi-transparente */
+  background-color: rgba(255, 255, 255, 0.15);
   box-shadow:
-    inset 2px 2px 5px -2px rgba(255, 255, 255, 0.4),
-    inset -2px -1px 5px 0 rgba(255, 255, 255, 0.4);
-  transform: rotate(2deg) scale(1.04); /* Corregido: añadido 'deg' y un leve escalado */
-  color: #c0b4d2; /* Tu color de acento personalizado */
+    inset 2px 2px 4px -2px rgba(255, 255, 255, 0.3),
+    inset -2px -1px 4px 0 rgba(255, 255, 255, 0.2);
+  transform: rotate(2deg) scale(1.05);
+  color: #c0b4d2;
 }
 
-/* Estado Activo (Pestaña de la página actual) */
 nav ul li a.active {
-  background: rgba(237, 237, 237, 0.6);
-  color: rgba(67, 30, 203, 0.942);
+  background: rgba(255, 255, 255, 0.25);
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(111, 44, 210, 0.25);
   transform: scale(0.96);
 }
 
-/* Efecto de clic físico (Momento exacto de presionar) */
 nav ul li a:active {
   background-color: rgb(181, 98, 232);
-  color: rgba(255, 255, 255, 0.95);
-  transform: scale(0.95);
+  color: #ffffff;
+  transform: scale(0.94);
 }
