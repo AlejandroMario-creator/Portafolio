@@ -189,3 +189,133 @@ nav ul li a:active {
   color: #ffffff;
   transform: scale(0.94);
 }
+
+.hero {
+    min-height: 100vh;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 100px 40px 40px;
+
+    display: flex;
+    align-items: center;
+    gap: 80px;
+}
+
+.hero-content,
+.hero-visual {
+    flex: 1;
+}
+
+.hero-label {
+    color: #b987ff;
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+}
+
+.hero h1 {
+    font-size: clamp(3rem, 7vw, 6rem);
+    line-height: 0.95;
+    margin: 0;
+    letter-spacing: -4px;
+}
+
+.hero h2 {
+    margin: 15px 0;
+    font-size: clamp(1.5rem, 3vw, 2.5rem);
+    color: #a855f7;
+}
+
+.hero-description {
+    max-width: 520px;
+    color: rgba(255, 255, 255, 0.65);
+    line-height: 1.7;
+}
+
+.hero-actions {
+    display: flex;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.hero-actions a {
+    padding: 12px 22px;
+    border-radius: 999px;
+    text-decoration: none;
+    color: white;
+    border: 1px solid rgba(147, 51, 234, 0.5);
+    background: rgba(111, 44, 210, 0.15);
+    backdrop-filter: blur(10px);
+    transition: 0.25s ease;
+}
+
+.hero-actions a:hover {
+    background: rgba(111, 44, 210, 0.4);
+    transform: translateY(-3px);
+}
+
+
+/* Terminal 
+.code-window {
+    border-radius: 20px;
+    overflow: hidden;
+
+    background: rgba(10, 6, 18, 0.65);
+    border: 1px solid rgba(147, 51, 234, 0.3);
+
+    backdrop-filter: blur(18px);
+
+    box-shadow:
+        0 25px 60px rgba(0, 0, 0, 0.4),
+        0 0 50px rgba(111, 44, 210, 0.12);
+}
+
+.code-header {
+    height: 45px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 0 16px;
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.code-header span {
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.35);
+}
+
+.code-window pre {
+    padding: 30px;
+    margin: 0;
+    overflow: auto;
+}
+
+.code-window code {
+    color: #d8b4fe;
+    font-size: 1rem;
+    line-height: 1.8;
+}
+
+*/
+
+/* Responsive */
+
+@media (max-width: 800px) {
+
+    .hero {
+        flex-direction: column;
+        justify-content: center;
+        padding: 130px 25px 50px;
+    }
+
+    .hero-content,
+    .hero-visual {
+        width: 100%;
+    }
+
+    .hero h1 {
+        letter-spacing: -2px;
+    }
+}
