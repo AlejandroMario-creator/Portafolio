@@ -68,21 +68,45 @@ body {
    Animaciones de Movimiento Orgánico
    ========================================================================== */
 @keyframes orbitar-1 {
-  0% { transform: translate(0, 0) scale(1); }
-  50% { transform: translate(15vw, 10vh) scale(1.15); }
-  100% { transform: translate(-8vw, 20vh) scale(0.9); }
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+
+  50% {
+    transform: translate(15vw, 10vh) scale(1.15);
+  }
+
+  100% {
+    transform: translate(-8vw, 20vh) scale(0.9);
+  }
 }
 
 @keyframes orbitar-2 {
-  0% { transform: translate(0, 0) scale(1.1); }
-  50% { transform: translate(-20vw, -15vh) scale(0.85); }
-  100% { transform: translate(8vw, -8vh) scale(1.2); }
+  0% {
+    transform: translate(0, 0) scale(1.1);
+  }
+
+  50% {
+    transform: translate(-20vw, -15vh) scale(0.85);
+  }
+
+  100% {
+    transform: translate(8vw, -8vh) scale(1.2);
+  }
 }
 
 @keyframes orbitar-3 {
-  0% { transform: translate(0, 0) scale(0.95); }
-  50% { transform: translate(-10vw, 12vh) scale(1.1); }
-  100% { transform: translate(12vw, -12vh) scale(1); }
+  0% {
+    transform: translate(0, 0) scale(0.95);
+  }
+
+  50% {
+    transform: translate(-10vw, 12vh) scale(1.1);
+  }
+
+  100% {
+    transform: translate(12vw, -12vh) scale(1);
+  }
 }
 
 /* ==========================================================================
@@ -191,66 +215,66 @@ nav ul li a:active {
 }
 
 .hero {
-    min-height: 100vh;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 100px 40px 40px;
+  min-height: 100vh;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 100px 40px 40px;
 
-    display: flex;
-    align-items: center;
-    gap: 80px;
+  display: flex;
+  align-items: center;
+  gap: 80px;
 }
 
 .hero-content,
 .hero-visual {
-    flex: 1;
+  flex: 1;
 }
 
 .hero-label {
-    color: #b987ff;
-    font-size: 1.1rem;
-    margin-bottom: 10px;
+  color: #b987ff;
+  font-size: 1.1rem;
+  margin-bottom: 10px;
 }
 
 .hero h1 {
-    font-size: clamp(3rem, 7vw, 6rem);
-    line-height: 0.95;
-    margin: 0;
-    letter-spacing: -4px;
+  font-size: clamp(3rem, 7vw, 6rem);
+  line-height: 0.95;
+  margin: 0;
+  letter-spacing: -4px;
 }
 
 .hero h2 {
-    margin: 15px 0;
-    font-size: clamp(1.5rem, 3vw, 2.5rem);
-    color: #a855f7;
+  margin: 15px 0;
+  font-size: clamp(1.5rem, 3vw, 2.5rem);
+  color: #a855f7;
 }
 
 .hero-description {
-    max-width: 520px;
-    color: rgba(255, 255, 255, 0.65);
-    line-height: 1.7;
+  max-width: 520px;
+  color: rgba(255, 255, 255, 0.65);
+  line-height: 1.7;
 }
 
 .hero-actions {
-    display: flex;
-    gap: 15px;
-    margin-top: 30px;
+  display: flex;
+  gap: 15px;
+  margin-top: 30px;
 }
 
 .hero-actions a {
-    padding: 12px 22px;
-    border-radius: 999px;
-    text-decoration: none;
-    color: white;
-    border: 1px solid rgba(147, 51, 234, 0.5);
-    background: rgba(111, 44, 210, 0.15);
-    backdrop-filter: blur(10px);
-    transition: 0.25s ease;
+  padding: 12px 22px;
+  border-radius: 999px;
+  text-decoration: none;
+  color: white;
+  border: 1px solid rgba(147, 51, 234, 0.5);
+  background: rgba(111, 44, 210, 0.15);
+  backdrop-filter: blur(10px);
+  transition: 0.25s ease;
 }
 
 .hero-actions a:hover {
-    background: rgba(111, 44, 210, 0.4);
-    transform: translateY(-3px);
+  background: rgba(111, 44, 210, 0.4);
+  transform: translateY(-3px);
 }
 
 
@@ -304,18 +328,49 @@ nav ul li a:active {
 
 @media (max-width: 800px) {
 
-    .hero {
-        flex-direction: column;
-        justify-content: center;
-        padding: 130px 25px 50px;
-    }
+  .hero {
+    flex-direction: column;
+    justify-content: center;
+    padding: 130px 25px 50px;
+  }
 
-    .hero-content,
-    .hero-visual {
-        width: 100%;
-    }
+  .hero-content,
+  .hero-visual {
+    width: 100%;
+  }
 
-    .hero h1 {
-        letter-spacing: -2px;
-    }
+  .hero h1 {
+    letter-spacing: -2px;
+  }
 }
+
+/*
+*/
+
+.projects-grid {
+  border: 2px solid transparent;
+  background: 
+    linear-gradient(#7100ea, #8c71b2) padding-box, /* Color de fondo interno (cámbialo si tu web es oscura) */
+    linear-gradient(135deg, #3d147a, #8a2be2, #00f2fe) border-box; /* Degradado morado a cian */
+  
+  border-radius: 24px;
+  padding: 3rem 2rem; 
+  gap: 30px;
+  width: 100%; 
+  max-width: 1200px; 
+  margin: 4rem auto; 
+
+  box-shadow: 
+    0 20px 40px rgba(61, 20, 122, 0.06),
+    inset 0 0 12px rgba(61, 20, 122, 0.03); 
+  
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.projects-grid:hover {
+  transform: translateY(-5px); 
+  box-shadow: 
+    0 30px 60px rgba(61, 20, 122, 0.12), 
+    inset 0 0 20px rgba(61, 20, 122, 0.05);
+}
+

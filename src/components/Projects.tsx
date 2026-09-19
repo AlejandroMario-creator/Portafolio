@@ -1,28 +1,28 @@
 import { projects } from "../data/projects"
 import { useState } from "react"
 function Projects() {
-    
+
     const [category, setCategory] = useState("Todos")
-    
-    const filteredProjects = category === "Todos" 
-        ? projects 
+
+    const categories = ["Todos", "Frontend", "Backend"]
+
+    const filteredProjects = category === "Todos"
+        ? projects
         : projects.filter(project => project.category === category);
+
 
     return (
         <section id="projects">
-            <p>Categoría seleccionada: {category}</p>
-
-            <button onClick={() => setCategory("Frontend")}>
-                Frontend
-            </button>
-
-            <button onClick={() => setCategory("Backend")}>
-                Backend
-            </button>
-
-            <button onClick={() => setCategory("Todos")}>
-                Todos
-            </button>
+            <div className="roject-filters">
+                {categories.map((cat) => (
+                    <button
+                        key={cat}
+                        onClick={() => setCategory(cat)}
+                    >
+                        {cat}
+                    </button>
+                ))}
+            </div>
 
             <div className="projects-grid">
                 {filteredProjects.map((project) => (
