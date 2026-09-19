@@ -1,9 +1,9 @@
-function Navbar(){
-  return(
+function Navbar() {
+  return (
     <nav>
+      <a className="nav-brand" href="#home">$</a>
       <ul>
-        <li><a href="#home">Inicio</a></li>
-        <li><a href="#about">Sobre mi</a></li>
+        <li><a href="#about">Sobre mí</a></li>
         <li><a href="#skills">Skills</a></li>
         <li><a href="#projects">Proyectos</a></li>
         <li><a href="#experience">Experiencia</a></li>
