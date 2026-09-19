@@ -1,16 +1,21 @@
-import { experiences } from "../data/experiences";
+import { experiences } from "../data/experiences"
 
 function Experience() {
     return (
-        <section id="experience">
+        <section id="experience" className="experience">
             <h2>Experiencia</h2>
-            <div >
+
+            <div className="experience-list">
                 {experiences.map((exp) => (
-                    <div key={exp.id}>
+                    <div className="experience-card" key={exp.id}>
                         <h3>{exp.role}</h3>
-                        <h4>{exp.ruc}</h4>
                         <h4>{exp.company}</h4>
-                        <p>{exp.startDate} - {exp.endDate}</p>
+                        <p>{exp.ruc}</p>
+
+                        <span className="experience-date">
+                            {exp.startDate} - {exp.endDate}
+                        </span>
+
                         <p>{exp.description}</p>
                     </div>
                 ))}
@@ -19,4 +24,4 @@ function Experience() {
     )
 }
 
-export default Experience;
+export default Experience

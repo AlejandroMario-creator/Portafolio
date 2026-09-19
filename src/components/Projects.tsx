@@ -13,7 +13,7 @@ function Projects() {
 
     return (
         <section id="projects">
-            <div className="roject-filters">
+            <div className="project-filters">
                 {categories.map((cat) => (
                     <button
                         key={cat}
